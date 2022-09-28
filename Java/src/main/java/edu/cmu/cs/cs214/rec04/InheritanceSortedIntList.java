@@ -9,5 +9,26 @@ package edu.cmu.cs.cs214.rec04;
  * @author Nora Shoemaker
  *
  */
-public class InheritanceSortedIntList {
+public class InheritanceSortedIntList extends SortedIntList {
+  private int numAdded = 0;
+
+  @Override
+  public boolean add(int num) {
+    numAdded += 1;
+    return super.add(num);
+  }
+
+/*   do not need to override addAll because of inheritance, in the Abstract class of addAll, function calls add, so by overriding add function you are overriding addAll function as well */
+
+  // @Override
+  // public boolean addAll(edu.cmu.cs.cs214.rec04.IntegerList list) {
+    // int added = list.size();
+    // numAdded += added;
+  //   return super.addAll(list);
+  // }
+
+  public int getTotalAdded() {
+    return numAdded;
+  }
+
 }

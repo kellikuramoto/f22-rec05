@@ -13,6 +13,26 @@ import org.junit.Test;
 public class DelegationSortedIntListTest {
     //Write you tests below
 
+    @Test
+    public void testAdd() {
+        DelegationSortedIntList sortedList = new DelegationSortedIntList();
+        sortedList.add(1);
+        sortedList.add(2);
+        sortedList.add(3);
+        assertEquals(3, sortedList.getTotalAdded());
+    }
+
+    @Test
+    public void testAddAll() {
+        DelegationSortedIntList sortedList = new DelegationSortedIntList();
+        IntegerList list = new SortedIntList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        sortedList.addAll(list);
+
+        assertEquals(3, sortedList.getTotalAdded());
+    }
 
 
     /**

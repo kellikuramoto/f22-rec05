@@ -1,6 +1,9 @@
 package edu.cmu.cs.cs214.rec04;
 
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +15,26 @@ import org.junit.Test;
  */
 public class InheritanceSortedIntListTest {
 
-       //Write you tests below
+    @Test
+    public void testAdd() {
+        InheritanceSortedIntList sortedList = new InheritanceSortedIntList();
+        sortedList.add(1);
+        sortedList.add(2);
+        sortedList.add(3);
+        assertEquals(3, sortedList.getTotalAdded());
+    }
+
+    @Test
+    public void testAddAll() {
+        InheritanceSortedIntList sortedList = new InheritanceSortedIntList();
+        IntegerList list = new SortedIntList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        sortedList.addAll(list);
+
+        assertEquals(3, sortedList.getTotalAdded());
+    }
 
 
 
